@@ -88,10 +88,13 @@ var controller = {
     // pruebas fechas 
     createDate : (req,res) => {
         var fechapago = new FechasPagos();
-        fechapago.Pago1 = Date.now();
-        fechapago.Pago2 = Date.now()  + 5;
+        var dateAux = new Date (Date.now()+30*24*60*60*1000); 
+        console.log(dateAux.getDate() + 4 );
+       
+        
         //fechapago.save();
         console.log(fechapago);
+        return res.status(200).send({fecha : dateAux});
 
     },
 }
