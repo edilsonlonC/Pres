@@ -12,4 +12,5 @@ router.get('/solicitud/:id',PrestamosController.getSolicitud);
 router.get('/solicitudes',PrestamosController.getSolicitudes);
 router.get('/solicitantes' ,PrestamosController.getSolicitantes);
 router.put('/activateSolicitud/:id',PrestamosController.activateSolicitud);
+router.post('/createDate',PrestamosController.createDate);
 module.exports = router;

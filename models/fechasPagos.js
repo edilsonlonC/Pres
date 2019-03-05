@@ -26,6 +26,7 @@ var FechasPagosSchema = Schema({
         default : null
     },
     
+    
 })
 
-module.exports = mongoose.model(FechasPagosSchema,'fechasPago');
+module.exports = mongoose.model('fechasPago',FechasPagosSchema);

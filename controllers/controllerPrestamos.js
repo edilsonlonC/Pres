@@ -1,6 +1,8 @@
 'use strict'
 var Solicitante = require('../models/Solicitante');
 var Solicitud = require('../models/solicitud');
+var Prestamo = require ('../models/prestamos');
+var FechasPagos = require('../models/fechasPagos');
 
 var controller = {
     home:  (req,res) =>{
@@ -82,6 +84,15 @@ var controller = {
             if (!solicitudUpdate) return res.status(404).send({message : 'no existe ña solicitud'});
             else return res.status(200).send({solicitudUpdate});
         });
+    },
+    // pruebas fechas 
+    createDate : (req,res) => {
+        var fechapago = new FechasPagos();
+        fechapago.Pago1 = Date.now();
+        fechapago.Pago2 = Date.now()  + 5;
+        //fechapago.save();
+        console.log(fechapago);
+
     },
 }
 module.exports = controller;
