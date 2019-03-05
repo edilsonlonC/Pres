@@ -88,13 +88,20 @@ var controller = {
     // pruebas fechas 
     createDate : (req,res) => {
         var fechapago = new FechasPagos();
-        var dateAux = new Date (Date.now()+30*24*60*60*1000); 
-        console.log(dateAux.getDate() + 4 );
+        fechapago.Pago1 = new Date(Date.now());
+        fechapago.Pago2 = new Date(Date.now()+30*24*60*60*1000);
+        fechapago.Pago3 = new Date(Date.now()+60*24*60*60*1000);
+        fechapago.Pago4 = new Date(Date.now()+90*24*60*60*1000);
+        fechapago.Pago5 = new Date(Date.now()+120*24*60*60*1000);
+        fechapago.Pago6 = new Date(Date.now()+150*24*60*60*1000); 
+        fechapago.save((err,fechapagoStorage) => {
+            if (err) return res.status(500).send({message : err});
+            if (!fechapagoStorage) return res.status(404).send({message : 'not found'});
+            else return res.status(200).send({fechapago});
+        });
        
         
-        //fechapago.save();
-        console.log(fechapago);
-        return res.status(200).send({fecha : dateAux});
+    
 
     },
 }
