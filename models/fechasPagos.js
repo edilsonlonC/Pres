@@ -27,3 +27,5 @@ var FechasPagosSchema = Schema({
     },
     
 })
+
+module.exports = mongoose.model(FechasPagosSchema,'fechasPago');

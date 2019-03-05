@@ -74,6 +74,14 @@ var controller = {
             if (!solicitantes) return res.status(404).send({message : 'no hay solicitantes'});
             else return res.status(200).send({solicitantes});
         });
-    }
+    },
+    activateSolicitud : (req,res) => {
+        var solicitudId = req.params.id;
+        Solicitud.findByIdAndUpdate(solicitudId,{isActive : true},(err,solicitudUpdate) => {
+            if (err) return res.status(500).send({message : err});
+            if (!solicitudUpdate) return res.status(404).send({message : 'no existe ña solicitud'});
+            else return res.status(200).send({solicitudUpdate});
+        });
+    },
 }
 module.exports = controller;
