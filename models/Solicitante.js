@@ -13,6 +13,11 @@ var SolicitanteSchema = Schema({
         type : String,
         default : null
     },
+    email : {
+        type: String,
+        required : true,
+        
+    }
 
     
 });
