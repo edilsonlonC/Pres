@@ -11,7 +11,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.16"
+    "mongoose": "^5.4.16",
+    "mongoose-type-email": "^1.0.10"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
